@@ -1,11 +1,11 @@
 == Medical Project
 
-Ruby version 2.1.0 \n
-Gemset name MedicalProject \n
+Ruby version 2.1.0 /n
+Gemset name MedicalProject /n
 
 This is educational project due to participation in RubyBursa RoR courses provided by Sloboda Studio company.
 
 Stuff:
-Vladislav Povedyuk - TL \n
-Sergey Starchenko \n
-Alex Shestmintsev \n
+Vladislav Povedyuk - TL /n
+Sergey Starchenko /n
+Alex Shestmintsev /n
