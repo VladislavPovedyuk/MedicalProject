@@ -1,11 +1,19 @@
 == Medical Project
 
-Ruby version 2.1.0 <br />
-Gemset name MedicalProject <br />
+This is an educational application, made due to participation in RubyBursa RoR courses which were provided bu Sloboda studio.
 
-This is educational project due to participation in RubyBursa RoR courses provided by Sloboda Studio company.
+Team:
 
-Stuff:
-Vladislav Povedyuk - TL <br />
-Sergey Starchenko <br />
-Alex Shestmintsev <br />
+* Vladislav Povedyuk - TL
+
+* Sergey Starchenko
+
+* Alex Shestmintsev
+
+Dependencies:
+
+* Ruby version 2.1.0
+
+* Rails version 4.0.2
+
+* Gemset name MedicalProject
