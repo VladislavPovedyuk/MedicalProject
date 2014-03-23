@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  skype: MyText
+  tel: 
+  age: 
+  gender: MyText
+
+two:
+  name: MyText
+  skype: MyText
+  tel: 
+  age: 
+  gender: MyText

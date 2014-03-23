@@ -1,0 +1,14 @@
+class CreateDoctors < ActiveRecord::Migration
+  def change
+    create_table :doctors do |t|
+    	t.has_many :meetings
+    	t.has_many :patients, :through => :meetings
+    	
+      t.string :name
+      t.string :login
+      t.string :password
+
+      t.timestamps
+    end
+  end
+end
