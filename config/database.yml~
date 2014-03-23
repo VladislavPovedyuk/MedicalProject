@@ -4,22 +4,22 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 local: &local
-  adapter: mysql2
-  username: root
-  password: sloboda123
-  host: localhost
+  adapter: sqlite3  
     
 development:
   <<: *local
-  database: medical_development
+  database: db/medical_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *local
-  database: medical_test
+  database: db/medical_test
 
 production:
-  <<: *local
+  adapter: mysql2
+  username: root
+  password: sloboda123
+  host: localhost
   database: medical_production
