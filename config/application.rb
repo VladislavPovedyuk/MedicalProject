@@ -9,7 +9,6 @@ Bundler.require(:default, Rails.env)
 module MedicalProject
   class Application < Rails::Application
   	config.generators do |g|
-  		g.template_engine :slim
   		g.test_framework :rspec, :view_specs => false,
   										 :fixture => true,
   										 :fixture_replacement => "factory_girl"
