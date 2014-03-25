@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2324354406">
+    <data-source source="LOCAL" name="Rails MedicalProject: development" uuid="6a2d60a8-2e58-4fba-a1f1-b4cd017dfa01">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/medical_development</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfd9dfc6dfc5dfc8dfc5dfcedfcbdf9bdf98df99</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails MedicalProject: test" uuid="a131dbc9-99a0-4c08-9f61-e2476bf90523">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/medical_test</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfd9dfc6dfc5dfc8dfc5dfcedfcbdf9bdf98df99</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails MedicalProject: production" uuid="8e31acf9-4cca-47fc-b7a9-1dede22aaef3">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://127.0.0.1/medical_production</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfd9dfc6dfc5dfc8dfc5dfcedfcbdf9bdf98df99</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
