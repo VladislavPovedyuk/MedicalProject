@@ -1,12 +1,28 @@
 source 'https://rubygems.org'
 
+group :development, :test do
+	gem 'pry-rails'
+	gem 'pry'
+	gem 'pry-nav'
+	gem 'pry-remote'
+	gem 'factory_girl_rails'
+	gem 'faker', '~> 1.2.0'
+end
+
+group :test do
+	gem 'rspec-rails'
+	gem 'spork'
+	gem 'database_cleaner', '1.0.0.RC1'
+	gem 'shoulda-matchers'
+	gem 'webmock'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'mysql2'
-gem 'sqlite3', group: :development
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
