@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'devise'
+
 group :development, :test do
 	gem 'pry-rails'
 	gem 'pry'
