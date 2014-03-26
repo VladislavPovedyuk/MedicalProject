@@ -1,4 +1,5 @@
 MedicalProject::Application.routes.draw do
+  devise_for :doctors
   get "welcome/index"
 
 

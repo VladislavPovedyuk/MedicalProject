@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140323114732) do
+ActiveRecord::Schema.define(version: 20140325113108) do
 
   create_table "doctors", force: true do |t|
     t.string   "name"
@@ -19,7 +19,11 @@ ActiveRecord::Schema.define(version: 20140323114732) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email",              default: "", null: false
+    t.string   "encrypted_password", default: "", null: false
   end
+
+  add_index "doctors", ["email"], name: "index_doctors_on_email", unique: true, using: :btree
 
   create_table "meetings", force: true do |t|
     t.integer  "doctor_id"

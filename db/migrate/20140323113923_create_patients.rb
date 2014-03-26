@@ -1,9 +1,9 @@
 class CreatePatients < ActiveRecord::Migration
   def change
-    create_table :patients do |t|    
+    create_table :patients do |t|
       t.string :name
       t.string :skype
-      t.integer :tel
+      t.string :tel
       t.integer :age
       t.string :gender
 
