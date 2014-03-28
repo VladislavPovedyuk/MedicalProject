@@ -8,7 +8,7 @@ class DoctorsController < ApplicationController
   end
 
   def create
-    @doctor = Doctor.new(params[:doctor].permit(:name, :email, :password))
+    @doctor = Doctor.new(doctor_params)
     if @doctor.save
       flash[:notice] = "Добавлен новый доктор #{@doctor.name}"
         redirect_to doctors_path
@@ -24,7 +24,7 @@ class DoctorsController < ApplicationController
 
   def update
     @doctor = Doctor.find(params[:id])
-    if @doctor.update(params[:doctor].permit(:name, :email, :password))
+    if @doctor.update(doctor_params)
       flash[:notice] = "Успешное редактирование данных доктора #{@doctor.name}"
         redirect_to edit_doctor_path
     else
@@ -44,4 +44,9 @@ class DoctorsController < ApplicationController
     flash[:notice] = "Доктор #{@doctor.name} успешно удален"
       redirect_to doctors_path
   end
+
+  private
+    def doctor_params
+      params[:doctor].permit(:name, :email, :password)
+    end
 end
