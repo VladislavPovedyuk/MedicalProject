@@ -1,2 +1,38 @@
-<h1>Doctors#index</h1>
-<p>Find me in app/views/doctors/index.html.erb</p>
+<% if notice %>
+    <p id="notice" ><%= notice %></p>
+<% end %>
+
+<h1>Список докторов :</h1>
+
+<% if @doctors.any? %>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Имя </th>
+        <th>email </th>
+        <th></th>
+        <th></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @doctors.each do |doctor| %>
+          <tr>
+            <td><%= doctor.name %></td>
+            <td><%= doctor.email %></td>
+            <td><%= link_to 'Посмотреть', doctor_path(doctor) %></td>
+            <td><%= link_to 'Редактировать', edit_doctor_path(doctor) %></td>
+            <td><%= link_to 'Удалить', doctor, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% else %>
+    У нас нет добавленных докторов
+<% end %>
+
+
+<br>
+
+<%= link_to 'Добавить нового доктора', new_doctor_path %>

@@ -1,0 +1,12 @@
+<fieldset class="smallForm">
+  <legend class="formLegend"><h2>Информация о враче</h2></legend>
+  Имя : <%= @doctor.name %>
+  <br />
+  email :  <%= @doctor.email %>
+
+  <!--TODO:Add calendar-->
+
+  <br />
+  <%= link_to 'Вернуться к списку врачей', doctors_path %>
+
+</fieldset>
