@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140325113108) do
 
   create_table "doctors", force: true do |t|
     t.string   "name"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",              default: "", null: false
