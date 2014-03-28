@@ -15,8 +15,6 @@ ActiveRecord::Schema.define(version: 20140325113108) do
 
   create_table "doctors", force: true do |t|
     t.string   "name"
-    t.string   "login"
-    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",              default: "", null: false
@@ -37,7 +35,7 @@ ActiveRecord::Schema.define(version: 20140325113108) do
   create_table "patients", force: true do |t|
     t.string   "name"
     t.string   "skype"
-    t.integer  "tel"
+    t.string   "tel"
     t.integer  "age"
     t.string   "gender"
     t.datetime "created_at"
