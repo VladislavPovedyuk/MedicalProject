@@ -1,0 +1,11 @@
+<%= simple_form_for @patient do |f| %>
+    <%= f.input :name %>
+    <%= f.input :skype %>
+    <%= f.input :tel %>
+    <%= f.input :age %>
+    <%= f.input :skype %>
+    <%= f.label :collection_radio_buttons %>
+    <%= f.collection_radio_buttons :gender, [['M', 'M'] ,['Ж', 'Ж']],:first, :last %>
+    <br />
+    <%= f.button :submit %>
+<% end %>
