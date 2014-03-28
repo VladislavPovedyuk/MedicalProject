@@ -1,4 +1,10 @@
 MedicalProject::Application.routes.draw do
+  get "doctors/create"
+  get "doctors/index"
+  get "doctors/new"
+  get "doctors/edit"
+  get "doctors/update"
+  get "doctors/destroy"
   resources :patients
   devise_for :doctors
 
