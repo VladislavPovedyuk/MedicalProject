@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%
+}
+
+body {
+    height: 100%;
+    background-color: #10578D;
+    text-align: center;
+    font: 1.2em Verdana, Arial, Helvetica, sans-serif;
+}
+
+a:link, a:visited {
+    color: #004F8B;
+    text-decoration: underline;
+    font-weight: bolder;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.noscreen {
+    display: none;
+}
+
+.cleaner {
+    clear: both;
+    height: 0;
+    font-size: 0;
+    visibility: hidden;
+}
+
+.hidden {
+    position: absolute;
+    top: -10000px;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+#wrapper {
+    width: 1200px;
+    margin: 60px auto 0 auto;
+    padding-bottom: 90px;
+    text-align: left;
+}
+
+.title {
+    background-color: #282828;
+    letter-spacing: 1px;
+    width: 39em;
+}
+
+.title-top {
+    background: url('../images/title-top.gif') repeat-x 0 0;
+}
+
+.title-left {
+    background: url('../images/title-left.gif') repeat-y 0 0
+}
+
+.title-right {
+    background: url('../images/title-right.gif') repeat-y 100% 0
+}
+
+.title-bottom {
+    background: url('../images/title-bottom.gif') repeat-x 0 100%
+}
+
+.title-top-left {
+    background: url('../images/title-top-left.gif') no-repeat 0 0;
+}
+
+.title-top-right {
+    background: url('../images/title-top-right.gif') no-repeat 100% 0;
+}
+
+.title-bottom-left {
+    background: url('../images/title-bottom-left.gif') no-repeat 0 100%;
+}
+
+.title-bottom-right {
+    background: url('../images/title-bottom-right.gif') no-repeat 100% 100%;
+}
+
+.title p {
+    color: #FFFFFF;
+    margin: 4px 0 0 21px;
+    padding-bottom: 12px;
+}
+
+h1 {
+    font: normal 2.4em Georgia, "Times New Roman", Times, serif;
+    padding-top: 25px;
+    margin-left: 20px;
+}
+
+h1 a:link, h1 a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+h1 span {
+    color: #FFB849;
+}
+
+ul.menu {
+    list-style-type: none;
+}
+
+ul.menu li {
+    background: url('../images/menu-li-divider.gif') no-repeat 50% 100%;
+    padding: 18px 0;
+}
+
+ul.menu li a, ul.menu li a:visited {
+    color: #FFFFFF;
+    font-weight: normal;
+    text-decoration: none;
+    padding: 4px 7px;
+}
+
+ul.menu li a:hover, ul.menu li a.active {
+    background-color: #002F53;
+}
+
+ul.menu li.last {
+    background: none;
+}
+
+.content {
+    width: 1200px;
+    margin: 19px auto 0 auto;
+}
+
+.column-left {
+    float: left;
+    width: 165px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.column-left h3 {
+    font: normal 1.5em Georgia, "Times New Roman", Times, serif;
+    margin: 10px 0 7px 0;
+    letter-spacing: 1px;
+}
+
+.column-right {
+    margin: 0 0 0 191px;
+    width: 1025px;
+}
+
+.box-top {
+    background: url('../images/box-top.jpg') no-repeat 0 0;
+    height: 12px;
+}
+
+.box {
+    background: url('../images/box-bg.jpg') repeat-y 0 0;
+}
+
+.box-in {
+    background-color: #FFFFFF;
+    padding: 0.8em 0 5em 0;
+    margin: 0 6em 0 2em;
+}
+
+.box-in p {
+    line-height: 1.6;
+    margin: 0 0 10px 25px;
+    color: #242424;
+}
+
+.box-bottom {
+    background: url('../images/box-bottom.jpg') no-repeat 0 100%;
+    height: 48px;
+}
+
+ul.main-list {
+    list-style-type: none;
+    margin: 14px 0 20px 25px;
+}
+
+.footer-info-left, .footer-info-right {
+    font-size: 0.8em;
+    color: #626262;
+    position: relative;
+    top: -7px;
+    display: inline;
+}
+
+.footer-info-left {
+    float: left;
+    margin-left: 17px;
+}
+
+.footer-info-right {
+    float: right;
+    margin-right: 40px;
+}
+
+.footer-info-left a, .footer-info-left a:visited, .footer-info-right a, .footer-info-right a:visited {
+    font-weight: normal;
+    color: #626262;
+}
+
+.smallForm {
+    border-radius: 10px;
+    border: 2px solid #474543;
+    padding: 8px;
+    margin: 16px;
+    margin-right: 25%;
+    margin-left: 25%;
+}
+
+.formLegend {
+    border-radius: 10px;
+    font: normal 1.2em Georgia, "Times New Roman", Times, serif;
+    border: 2px solid #242422;
+    background-color: lightgray;
+    padding: 8px;
+}
+
+#notice {
+    color: #000;
+    border: 2px solid green;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #a2f0c1;
+    font: bold smaller sans-serif;
+}

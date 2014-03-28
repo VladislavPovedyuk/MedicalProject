@@ -7,8 +7,75 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="wrapper">
 
-<%= yield %>
+  <!-- Title -->
+  <div class="title">
+    <div class="title-top">
+      <div class="title-left">
+        <div class="title-right">
+          <div class="title-bottom">
+            <div class="title-top-left">
+              <div class="title-bottom-left">
+                <div class="title-top-right">
+                  <div class="title-bottom-right">
+                    <h1><a href="/" title="Go to homepage">Клиника им. <span>В.И. Грищенко</span></a></h1>
 
+                    <p>Клиника репродуктивной медицины</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Title end -->
+
+  <hr class="noscreen"/>
+
+  <div class="content">
+
+    <div class="column-left">
+      <h3>Меню :</h3>
+      <a href="#skip-menu" class="hidden"></a>
+      <ul class="menu">
+
+        </li>
+        <li><a href="/"> Главная </a></li>
+        <li><a href="/patients/new"> Запись на консультацию </a></li>
+        <!--TODO:Disactivated because page is not ready yet-->
+        <li><a href="/" onclick="return false" class="active"> О нас </a></li>
+
+      </ul>
+    </div>
+
+    <div id="skip-menu"></div>
+    <div class="column-right">
+      <div class="box">
+        <div class="box-top"></div>
+        <div class="box-in">
+
+          <%= yield %>
+
+        </div>
+      </div>
+
+      <div class="box-bottom">
+
+        <hr class="noscreen"/>
+
+        <div class="footer-info-left"><a href="https://github.com/VladislavPovedyuk/MedicalProject"
+                                         target="blank">Developers Team</a>, 2014.
+        </div>
+
+      </div>
+
+      <div class="cleaner">&nbsp;</div>
+    </div>
+  </div>
+
+</div>
 </body>
 </html>
