@@ -1,2 +1,29 @@
-<h1>Doctors#edit</h1>
-<p>Find me in app/views/doctors/edit.html.erb</p>
+<% if notice %>
+    <p id="notice" ><%= notice %></p>
+<% end %>
+
+<fieldset class="smallForm">
+  <legend class="formLegend"><h2>Редактирование доктора</h2></legend>
+
+  <% if @doctor.errors.any? %>
+      <div id="error_explanation" >
+        <h2><%= pluralize(@doctor.errors.count, "ошибки" ) %>
+          Не позволили произвести запись:</h2>
+        <ul>
+          <% @doctor.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+
+  <%= simple_form_for @doctor do |f| %>
+      <%= f.input :name, label: "Имя :" %>
+      <%= f.input :email, label: "email :"  %>
+      <br />
+      <%= f.button :submit, 'Редактировать' %>
+  <% end %>
+
+  <%= link_to 'Вернуться к списку врачей', doctors_path %>
+
+</fieldset>

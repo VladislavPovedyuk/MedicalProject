@@ -4,15 +4,17 @@ class DoctorsController < ApplicationController
   end
 
   def new
-    @doctor = Doctor.new(params[:doctor].permit(:name, :encrypted_password, :email))
+    @doctor = Doctor.new
   end
 
   def create
-    @doctor = Doctor.new(params[:doctor].permit(:name, :encrypted_password, :email))
+    @doctor = Doctor.new(doctor_params)
     if @doctor.save
-      render 'index'
+      flash[:notice] = "Добавлен новый доктор #{@doctor.name}"
+        redirect_to doctors_path
     else
-      render 'new'
+      flash[:notice] = 'Во время добавления врача произошла ошибка'
+        render 'new'
     end
   end
 
@@ -22,17 +24,29 @@ class DoctorsController < ApplicationController
 
   def update
     @doctor = Doctor.find(params[:id])
-    if @doctor.update(params[:doctor].permit(:name, :encrypted_password, :email))
-      redirect_to @doctor
+    if @doctor.update(doctor_params)
+      flash[:notice] = "Успешное редактирование данных доктора #{@doctor.name}"
+        redirect_to edit_doctor_path
     else
-      render 'edit'
+      flash[:notice] = 'Во время редактирования врача произошла ошибка'
+        render 'edit'
     end
+  end
+
+  def show
+    @doctor = Doctor.find(params[:id])
   end
 
   def destroy
     @doctor = Doctor.find(params[:id])
     @doctor.destroy
 
-    redirect_to 'index'
+    flash[:notice] = "Доктор #{@doctor.name} успешно удален"
+      redirect_to doctors_path
   end
+
+  private
+    def doctor_params
+      params[:doctor].permit(:name, :email, :password)
+    end
 end
