@@ -1,0 +1,31 @@
+<% if notice %>
+    <p id="notice" ><%= notice %></p>
+<% end %>
+
+<fieldset class="smallForm">
+  <legend class="formLegend"><h2>Запись на консультацию</h2></legend>
+
+  <% if @patient.errors.any? %>
+      <div id="error_explanation" >
+        <h2><%= pluralize(@patient.errors.count, "ошибки" ) %>
+          Не позволили произвести запись:</h2>
+        <ul>
+          <% @patient.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+
+    <%= simple_form_for @patient do |f| %>
+        <%= f.input :name, label: "Имя :", placeholder: "Введите ваше имя" %>
+        <%= f.input :skype, label: "Skype :", placeholder: "Введите ваш скайп логин"  %>
+        <%= f.input :tel, label: "Телефон :", placeholder: "Введите ваш номер телефона"  %>
+        <%= f.input :age, label: "Возраст :", placeholder: "Введите ваш возраст", collection: 18..50  %>
+        <%= f.label "Пол :" %>
+        <%= f.collection_radio_buttons :gender, [['M', 'M'] ,['Ж', 'Ж']],:first, :last %>
+        <br />
+        <%= f.button :submit, 'Записаться' %>
+    <% end %>
+
+</fieldset>

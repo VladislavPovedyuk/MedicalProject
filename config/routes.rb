@@ -1,5 +1,9 @@
 MedicalProject::Application.routes.draw do
+
+  resources :patients, :doctors
+
   devise_for :doctors
+
   get "welcome/index"
 
 
