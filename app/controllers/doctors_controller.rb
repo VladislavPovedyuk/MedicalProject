@@ -10,7 +10,7 @@ class DoctorsController < ApplicationController
   def create
     @doctor = Doctor.new(params[:doctor].permit(:name, :encrypted_password, :email))
     if @doctor.save
-      redirect_to new_doctor_path
+      render 'index'
     else
       render 'new'
     end
@@ -33,6 +33,6 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
     @doctor.destroy
 
-    redirect_to doctors_destroy_path
+    redirect_to 'index'
   end
 end
