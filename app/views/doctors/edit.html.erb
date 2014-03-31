@@ -17,7 +17,7 @@
       </div>
   <% end %>
 
-  <%= simple_form_for @doctor do |f| %>
+  <%= simple_form_for @doctor , :html => { :class => 'form-horizontal' } do |f| %>
       <%= f.input :name, label: "Имя :" %>
       <%= f.input :email, label: "email :"  %>
       <br />
