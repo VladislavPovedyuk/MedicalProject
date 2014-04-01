@@ -239,3 +239,12 @@ ul.main-list {
     background-color: #a2f0c1;
     font: bold smaller sans-serif;
 }
+
+#error_explanation {
+    color: #000;
+    border: 2px solid red;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #f0d7df;
+    font: bold smaller sans-serif;
+}

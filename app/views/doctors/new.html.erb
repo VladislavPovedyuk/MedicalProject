@@ -3,8 +3,8 @@
 
   <% if @doctor.errors.any? %>
       <div id="error_explanation" >
-        <h2><%= pluralize(@doctor.errors.count, "ошибки" ) %>
-          Не позволили произвести запись:</h2>
+        <h4><%= pluralize(@doctor.errors.count, "error" ) %>
+          Was found during validation, please fix them to continue:</h4>
         <ul>
           <% @doctor.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>

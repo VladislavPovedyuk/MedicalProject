@@ -13,8 +13,7 @@ class DoctorsController < ApplicationController
       flash[:notice] = "Добавлен новый доктор #{@doctor.name}"
         redirect_to doctors_path
     else
-      flash[:notice] = 'Во время добавления врача произошла ошибка'
-        render 'new'
+      render action: 'new'
     end
   end
 
@@ -29,7 +28,7 @@ class DoctorsController < ApplicationController
         redirect_to edit_doctor_path
     else
       flash[:notice] = 'Во время редактирования врача произошла ошибка'
-        render 'edit'
+        render action: 'edit'
     end
   end
 

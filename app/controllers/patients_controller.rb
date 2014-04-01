@@ -10,7 +10,7 @@ class PatientsController < ApplicationController
         redirect_to new_patient_path
     else
       flash[:notice] = 'Во время записи произошла ошибка'
-        redirect_to new_patient_path
+        render action: 'new'
     end
   end
 end
