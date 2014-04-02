@@ -3,12 +3,12 @@
 <% end %>
 
 <fieldset class="smallForm">
-  <legend class="formLegend"><h2>Запись на консультацию</h2></legend>
+  <legend class="formLegend"><h4>Запись на консультацию</h4></legend>
 
   <% if @patient.errors.any? %>
       <div id="error_explanation" >
-        <h2><%= pluralize(@patient.errors.count, "ошибки" ) %>
-          Не позволили произвести запись:</h2>
+        <h4><%= pluralize(@patient.errors.count, "error" ) %>
+          Was found during validation, please fix them to continue:</h4>
         <ul>
           <% @patient.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
@@ -17,15 +17,16 @@
       </div>
   <% end %>
 
-    <%= simple_form_for @patient do |f| %>
+    <%= simple_form_for @patient, :html => { :class => 'form-horizontal' } do |f| %>
         <%= f.input :name, label: "Имя :", placeholder: "Введите ваше имя" %>
         <%= f.input :skype, label: "Skype :", placeholder: "Введите ваш скайп логин"  %>
         <%= f.input :tel, label: "Телефон :", placeholder: "Введите ваш номер телефона"  %>
         <%= f.input :age, label: "Возраст :", placeholder: "Введите ваш возраст", collection: 18..50  %>
-        <%= f.label "Пол :" %>
-        <%= f.collection_radio_buttons :gender, [['M', 'M'] ,['Ж', 'Ж']],:first, :last %>
+        <%= f.input :gender, :collection => ["М", "Ж"], :as => :radio_buttons, :label => 'Пол :' %>
         <br />
-        <%= f.button :submit, 'Записаться' %>
+        <center>
+          <%= f.button :submit, 'Записаться' %>
+        </center>
     <% end %>
 
 </fieldset>

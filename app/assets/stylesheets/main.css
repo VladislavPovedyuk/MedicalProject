@@ -227,6 +227,7 @@ ul.main-list {
     font: normal 1.2em Georgia, "Times New Roman", Times, serif;
     border: 2px solid #242422;
     background-color: lightgray;
+    width: 250px;
     padding: 8px;
 }
 
@@ -236,5 +237,14 @@ ul.main-list {
     padding: 1em;
     margin-bottom: 2em;
     background-color: #a2f0c1;
+    font: bold smaller sans-serif;
+}
+
+#error_explanation {
+    color: #000;
+    border: 2px solid red;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #f0d7df;
     font: bold smaller sans-serif;
 }

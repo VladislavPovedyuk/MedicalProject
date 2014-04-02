@@ -2,11 +2,11 @@
     <p id="notice" ><%= notice %></p>
 <% end %>
 
-<h1>Список докторов :</h1>
+<h2>Список докторов :</h2>
 
 <% if @doctors.any? %>
 
-    <table>
+    <table class="table table-hover">
       <thead>
       <tr>
         <th>Имя </th>
@@ -28,6 +28,8 @@
       <% end %>
       </tbody>
     </table>
+
+
 <% else %>
     У нас нет добавленных докторов
 <% end %>

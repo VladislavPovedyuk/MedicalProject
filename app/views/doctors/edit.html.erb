@@ -3,12 +3,12 @@
 <% end %>
 
 <fieldset class="smallForm">
-  <legend class="formLegend"><h2>Редактирование доктора</h2></legend>
+  <legend class="formLegend"><h4>Редактирование доктора</h4></legend>
 
   <% if @doctor.errors.any? %>
       <div id="error_explanation" >
-        <h2><%= pluralize(@doctor.errors.count, "ошибки" ) %>
-          Не позволили произвести запись:</h2>
+        <h4><%= pluralize(@doctor.errors.count, "error" ) %>
+          Was found during validation, please fix them to continue:</h4>
         <ul>
           <% @doctor.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
@@ -17,13 +17,16 @@
       </div>
   <% end %>
 
-  <%= simple_form_for @doctor do |f| %>
+  <%= simple_form_for @doctor , :html => { :class => 'form-horizontal' } do |f| %>
       <%= f.input :name, label: "Имя :" %>
       <%= f.input :email, label: "email :"  %>
       <br />
-      <%= f.button :submit, 'Редактировать' %>
+      <center>
+        <%= f.button :submit, 'Редактировать' %> &nbsp&nbsp&nbsp <%= link_to 'Вернуться к списку врачей', doctors_path %>
+      </center>
+
   <% end %>
 
-  <%= link_to 'Вернуться к списку врачей', doctors_path %>
+
 
 </fieldset>
