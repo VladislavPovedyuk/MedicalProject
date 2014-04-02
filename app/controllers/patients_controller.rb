@@ -9,8 +9,7 @@ class PatientsController < ApplicationController
       flash[:notice] = 'Запись прошла успешно. Доктор с вами свяжется. Всего доброго!'
         redirect_to new_patient_path
     else
-      flash[:notice] = 'Во время записи произошла ошибка'
-        render action: 'new'
+      render action: 'new'
     end
   end
 end
