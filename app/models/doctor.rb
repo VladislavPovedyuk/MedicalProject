@@ -3,13 +3,11 @@ class Doctor < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :validatable
 
-  attr_accessor :password_confirmation
-
 	has_many :meetings
 	has_many :patients, :through => :meetings
 
   validates :name, presence: true, length: { in: 2...15 }
-  validates :email, format: { with: /\A([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}\z/,
+  validates :email, format: { with: Devise.email_regexp,
                               message: 'Bad E-mail '}
   validates :password, confirmation: true
   validates :password_confirmation,
