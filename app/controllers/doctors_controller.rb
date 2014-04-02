@@ -1,7 +1,7 @@
 class DoctorsController < ApplicationController
 
   def index
-    @doctors = Doctor.all
+    @doctors = Doctor.sorted_descending.all
   end
 
   def new
@@ -47,6 +47,6 @@ class DoctorsController < ApplicationController
 
   private
     def doctor_params
-      params[:doctor].permit(:name, :email, :password)
+      params[:doctor].permit(:name, :email, :password, :password_confirmation)
     end
 end
