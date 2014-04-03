@@ -1,5 +1,5 @@
 class Patient < ActiveRecord::Base
-	has_many :meetings
+	has_many :meetings, foreign_key: :patient_id
 	has_many :doctors, :through => :meetings
 
   validates :name, presence: true, length: { in: 2...15 }
