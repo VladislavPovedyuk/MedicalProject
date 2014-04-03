@@ -248,3 +248,7 @@ ul.main-list {
     background-color: #f0d7df;
     font: bold smaller sans-serif;
 }
+
+.white_link {
+    color: white;
+}

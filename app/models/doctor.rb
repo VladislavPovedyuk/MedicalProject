@@ -1,7 +1,7 @@
 class Doctor < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :validatable
+  devise :database_authenticatable, :rememberable, :validatable
 
 	has_many :meetings
 	has_many :patients, :through => :meetings
