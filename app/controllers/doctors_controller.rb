@@ -1,4 +1,5 @@
 class DoctorsController < ApplicationController
+  before_filter :authenticate_doctor!
 
   def index
     @doctors = Doctor.sorted_descending.all
@@ -7,7 +8,6 @@ class DoctorsController < ApplicationController
   def new
     @doctor = Doctor.new
   end
-
   def create
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
