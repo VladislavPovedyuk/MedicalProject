@@ -1,17 +1,18 @@
 MedicalProject::Application.routes.draw do
+  get "patients/index"
+  get "patient/index"
+  devise_for :doctors, :controllers => {:doctors => "doctors"}
 
   resources :patients, :doctors
 
-  devise_for :doctors
-
-  get "welcome/index"
+  get "patients/index"
 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+  root 'patients#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

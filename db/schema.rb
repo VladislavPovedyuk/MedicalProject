@@ -18,8 +18,9 @@ ActiveRecord::Schema.define(version: 20140325113108) do
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",              default: "", null: false
-    t.string   "encrypted_password", default: "", null: false
+    t.string   "email",               default: "", null: false
+    t.string   "encrypted_password",  default: "", null: false
+    t.datetime "remember_created_at"
   end
 
   add_index "doctors", ["email"], name: "index_doctors_on_email", unique: true, using: :btree
