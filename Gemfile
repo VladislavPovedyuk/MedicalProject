@@ -18,7 +18,7 @@ end
 group :test do
 	gem 'rspec-rails'
 	gem 'spork'
-	gem 'database_cleaner', '1.0.0.RC1'
+	gem 'database_cleaner'
 	gem 'shoulda-matchers'
 	gem 'webmock'
 end
