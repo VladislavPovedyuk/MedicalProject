@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe DoctorsController do
 
+  # GET
   describe "GET 'index'" do
     it "returns http success" do
       get 'index'
@@ -9,8 +10,45 @@ describe DoctorsController do
     end
   end
 
+  describe "GET 'new'" do
+    it "returns http success" do
+      get 'new'
+      response.should be_success
+    end
+  end
+
+  describe "GET #edit" do
+
+    subject { FactoryGirl.create(:richards) }
+
+    it "assigns the requested doctor to subject" do
+      get :edit, id: subject
+      expect(assigns(:doctor)).to eq(subject)
+    end
+
+    it "renders the :edit view" do
+      get :edit, id: subject
+      expect(response).to render_template :edit
+    end
+  end
+
+  describe "GET #show" do
+
+    subject { FactoryGirl.create(:richards) }
+
+    it "assigns the requested doctor to subject" do
+      get :show, id: subject
+      expect(assigns(:doctor)).to eq(subject)
+    end
+
+    it "renders the :show view" do
+      get :show, id: subject
+      expect(response).to render_template :show
+    end
+  end
 
 
+  # POST
   describe "POST #create" do
     context "with valid attributes" do
       it "creates new object" do
@@ -69,6 +107,21 @@ describe DoctorsController do
         post :update, id: subject, doctor: FactoryGirl.attributes_for(:doctor_not_valid2)
         expect(response).to render_template :edit
       end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    before(:each) { @doctor = FactoryGirl.create :richards }
+
+    it "doctor is deleted" do
+      expect {
+        delete :destroy, id: @doctor
+      }.to change(Doctor, :count).by(-1)
+    end
+
+    it "redirects to doctors path" do
+      delete :destroy, id: @doctor
+      expect(response).to redirect_to doctors_path
     end
   end
 

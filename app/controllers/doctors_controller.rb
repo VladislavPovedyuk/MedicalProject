@@ -39,10 +39,13 @@ class DoctorsController < ApplicationController
 
   def destroy
     @doctor = Doctor.find(params[:id])
-    @doctor.destroy
+    if @doctor.destroy
+      flash[:notice] = "Доктор #{@doctor.name} успешно удален"
+    else
+      flash[:notice] = "Ошибка удаления доктора #{@doctor.name}"
+    end
+    redirect_to doctors_path
 
-    flash[:notice] = "Доктор #{@doctor.name} успешно удален"
-      redirect_to doctors_path
   end
 
   private
