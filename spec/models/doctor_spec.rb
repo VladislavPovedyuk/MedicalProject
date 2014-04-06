@@ -16,6 +16,11 @@ describe Doctor do
     FactoryGirl.build(:doctor_not_valid2).should_not be_valid
   end
 
+  it "has a not valid factory" do
+    FactoryGirl.build(:doctor_not_valid3).should_not be_valid
+  end
+
   it { should have_many(:meetings).with_foreign_key('doctor_id') }
 
+  #it { should validate_presence_of(:owner) }
 end
