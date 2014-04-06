@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-  before_filter :authenticate_doctor!
+  #before_filter :authenticate_doctor!
 
   def index
     @doctors = Doctor.sorted_descending.all

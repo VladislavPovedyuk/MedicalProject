@@ -3,7 +3,7 @@ class Doctor < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :rememberable, :validatable
 
-	has_many :meetings
+	has_many :meetings, foreign_key: :doctor_id
 	has_many :patients, :through => :meetings
 
   validates :name, presence: true, length: { in: 2...15 }
