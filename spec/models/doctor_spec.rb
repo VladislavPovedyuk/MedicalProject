@@ -22,5 +22,5 @@ describe Doctor do
 
   it { should have_many(:meetings).with_foreign_key('doctor_id') }
 
-
+  #it { should validate_presence_of(:owner) }
 end
