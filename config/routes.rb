@@ -1,6 +1,11 @@
 MedicalProject::Application.routes.draw do
   get "patients/index"
   get "patient/index"
+
+  get "doctors/calendar/:id", :to => 'doctors#calendar', :as => 'doctors_calendar'
+
+  get "patients/show/:id", :to => 'patients#show', :as => 'patients_info'
+
   devise_for :doctors, :controllers => {:doctors => "doctors"}
 
   resources :patients, :doctors

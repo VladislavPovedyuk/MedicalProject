@@ -2,6 +2,8 @@ class Patient < ActiveRecord::Base
 	has_many :meetings, foreign_key: :patient_id
 	has_many :doctors, :through => :meetings
 
+  accepts_nested_attributes_for :doctors
+
   validates :name, presence: true, length: { in: 2...15 }
   validates :skype, presence: true, length: { in: 2...15 }
 
