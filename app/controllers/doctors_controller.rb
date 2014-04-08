@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
   before_filter :authenticate_doctor!
-  before_action :doctor_find_by_id, only: [:edit, :update, :show, :destroy ]
+  before_action :doctor_find_by_id, only: [:edit, :update, :show, :destroy, :calendar ]
 
   def index
     @doctors = Doctor.sorted_descending.all
@@ -34,6 +34,10 @@ class DoctorsController < ApplicationController
   end
 
   def show
+  end
+
+  def calendar
+    @meetings = Meeting.where(:doctor_id => params[:id])
   end
 
   def destroy

@@ -1,0 +1,62 @@
+<fieldset class="smallForm">
+  <legend class="formLegend"><h4>Календарь врача</h4></legend>
+  <table class="table table-striped">
+    <h3>Bрач :</h3>
+    <tr>
+      <td>
+        Имя :
+      </td>
+      <td>
+        <%= @doctor.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        email :
+      </td>
+      <td>
+        <%= @doctor.email %>
+      </td>
+    </tr>
+  </table>
+    <h3>Встречи :</h3>
+    <% if @meetings.any? %>
+
+        <table class="table table-hover">
+          <thead>
+          <tr>
+            <th></th>
+            <th>start</th>
+            <th>end </th>
+          </tr>
+          </thead>
+
+          <tbody>
+          <% @meetings.each do |meeting| %>
+              <tr>
+                <td><%= link_to 'Пациент', patients_info_path(meeting.patient_id) %></td>
+                <td>
+
+                </td>
+                <td><%= meeting.time_end %></td>
+              </tr>
+          <% end %>
+          </tbody>
+
+          <tr>
+            <td colspan="2">
+              <%= link_to 'Вернуться к списку врачей', doctors_path %>
+            </td>
+          </tr>
+        </table>
+
+
+    <% else %>
+        У вас нет встреч
+        <br />
+        <%= link_to 'Вернуться к списку врачей', doctors_path %>
+    <% end %>
+
+
+
+</fieldset>

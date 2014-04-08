@@ -11,8 +11,6 @@
       <tr>
         <th>Имя </th>
         <th>email </th>
-        <th></th>
-        <th></th>
       </tr>
       </thead>
 
@@ -22,6 +20,7 @@
             <td><%= doctor.name %></td>
             <td><%= doctor.email %></td>
             <td><%= link_to 'Посмотреть', doctor_path(doctor) %></td>
+            <td><%= link_to 'Календарь', doctors_calendar_path(doctor) %></td>
             <td><%= link_to 'Редактировать', edit_doctor_path(doctor) %></td>
             <td><%= link_to 'Удалить', doctor, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
           </tr>
