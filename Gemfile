@@ -8,9 +8,7 @@ gem 'devise'
 
 gem 'heroku'
 
-group :production do
-  gem 'pg'
-end
+gem 'pg', group: :production
 
 group :development, :test do
   gem 'mysql2'
