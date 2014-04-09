@@ -1,0 +1,50 @@
+<fieldset class="smallForm">
+  <legend class="formLegend"><h4>Информация о пациенте</h4></legend>
+  <table class="table table-striped">
+    <tr>
+      <td>
+        Имя :
+      </td>
+      <td>
+        <%= @patient.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        skype :
+      </td>
+      <td>
+        <%= @patient.skype %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Возраст :
+      </td>
+      <td>
+        <%= @patient.age %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Пол  :
+      </td>
+      <td>
+        <%= @patient.gender %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Телефон :
+      </td>
+      <td>
+        <%= @patient.tel %>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <a href="javascript:history.back();">Вернуться к списку встреч</a>
+      </td>
+    </tr>
+  </table>
+</fieldset>
