@@ -24,7 +24,7 @@
         <%= f.input :age, label: "Возраст :", placeholder: "Введите ваш возраст", collection: 18..50  %>
         <%= f.input :gender, :collection => ["М", "Ж"], :as => :radio_buttons, :label => 'Пол :' %>
         <%= simple_fields_for :doctors do |d|%>
-            <%= d.input :id, collection: @doctors_names_list %>
+            <%= d.input :id, collection: @doctors_names_list, :label => 'Доктор :' %>
         <% end %>
         <br />
         <center>
