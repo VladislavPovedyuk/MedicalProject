@@ -1,4 +1,5 @@
 MedicalProject::Application.routes.draw do
+
   get "patients/index"
   get "patient/index"
 
@@ -8,7 +9,7 @@ MedicalProject::Application.routes.draw do
 
   devise_for :doctors, :controllers => {:doctors => "doctors"}
 
-  resources :patients, :doctors
+  resources :patients, :doctors, :meetings
 
   get "patients/index"
 
