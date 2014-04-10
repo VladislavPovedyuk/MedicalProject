@@ -6,7 +6,12 @@ gem 'simple_form'
 
 gem 'devise'
 
+gem 'heroku'
+
+gem 'pg', group: :production
+
 group :development, :test do
+  gem 'mysql2'
 	gem 'pry-rails'
 	gem 'pry'
 	gem 'pry-nav'
@@ -28,7 +33,7 @@ gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-gem 'mysql2'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

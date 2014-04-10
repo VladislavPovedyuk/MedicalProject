@@ -3,7 +3,7 @@ class Doctor < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :rememberable, :validatable
 
-	has_many :meetings
+	has_many :meetings, foreign_key: :doctor_id
 	has_many :patients, :through => :meetings
 
   validates :name, presence: true, length: { in: 2...15 }
@@ -11,7 +11,7 @@ class Doctor < ActiveRecord::Base
                               message: 'Bad E-mail '}
   validates :password, confirmation: true
   validates :password_confirmation,
-            format: { with: /\A[a-zA-Z0-9_]+\z/,
+            format: { with: /\A[a-zA-Z0-9_]*\z/,
             message: 'Only allows letters, numbers. Minimum length for password - 8 characters '}
 
   scope :sorted_descending,-> {order("created_at DESC")}
