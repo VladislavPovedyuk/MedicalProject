@@ -1,0 +1,24 @@
+<% if notice %>
+    <p id="notice" ><%= notice %></p>
+<% end %>
+
+<fieldset class="smallForm" style="margin-right: 15%; margin-left: 15%;">
+  <legend class="formLegend"><h4>Установка времени</h4></legend>
+
+  <%= simple_form_for @meeting, method: :patch, :html => { :class => 'form-vertical' } do |f| %>
+      <h5>Доктор : <%= @doctor_name %></h5>
+      <h5>Пациент :<%= @patient_name %></h5>
+      <%= f.input :doctor_id %>
+      <%= f.input :patient_id %>
+      <%= f.input :time_start, label: "Начало :", :input_html => {:style => 'width: 100px'} %>
+      <%= f.input :time_end, label: "Конец :" , :input_html => {:style => 'width: 100px'} %>
+      <br />
+      <center>
+        <%= f.button :submit, 'Установить время' %> &nbsp&nbsp&nbsp <%= link_to 'Вернуться к календарю', doctors_calendar_path(@meeting.doctor_id) %>
+      </center>
+
+  <% end %>
+
+
+
+</fieldset>
