@@ -8,8 +8,6 @@
   <%= simple_form_for @meeting, method: :patch, :html => { :class => 'form-vertical' } do |f| %>
       <h5>Доктор : <%= @doctor_name %></h5>
       <h5>Пациент :<%= @patient_name %></h5>
-      <%= f.input :doctor_id %>
-      <%= f.input :patient_id %>
       <%= f.input :time_start, label: "Начало :", :input_html => {:style => 'width: 100px'} %>
       <%= f.input :time_end, label: "Конец :" , :input_html => {:style => 'width: 100px'} %>
       <br />

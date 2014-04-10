@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20140325113108) do
   create_table "meetings", force: true do |t|
     t.integer  "doctor_id"
     t.integer  "patient_id"
-    t.time     "time_start"
-    t.time     "time_end"
+    t.datetime "time_start"
+    t.datetime "time_end"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
