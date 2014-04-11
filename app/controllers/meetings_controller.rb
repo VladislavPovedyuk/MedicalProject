@@ -8,10 +8,10 @@ class MeetingsController < ApplicationController
 
   def update
     if @meeting.update(meeting_params)
-      flash[:notice] = "Время установлено успешно"
+      flash[:notice] = t('time_set_success')
       redirect_to edit_meeting_path
     else
-      flash[:notice] = 'Во время установки времени произошла ошибка'
+      flash[:notice] = t('time_set_fail')
       render action: 'edit'
     end
   end

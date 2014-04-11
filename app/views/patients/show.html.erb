@@ -1,9 +1,9 @@
 <fieldset class="smallForm">
-  <legend class="formLegend"><h4>Информация о пациенте</h4></legend>
+  <legend class="formLegend"><h4><%= t('show_patient_legend') %></h4></legend>
   <table class="table table-striped">
     <tr>
       <td>
-        Имя :
+        <%= t('name_label') %>
       </td>
       <td>
         <%= @patient.name %>
@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <td>
-        skype :
+        <%= t('skype_label') %>
       </td>
       <td>
         <%= @patient.skype %>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
       <td>
-        Возраст :
+        <%= t('age_label') %>
       </td>
       <td>
         <%= @patient.age %>
@@ -27,7 +27,7 @@
     </tr>
     <tr>
       <td>
-        Пол  :
+        <%= t('gender_label') %>
       </td>
       <td>
         <%= @patient.gender %>
@@ -35,7 +35,7 @@
     </tr>
     <tr>
       <td>
-        Телефон :
+        <%= t('tel_label') %>
       </td>
       <td>
         <%= @patient.tel %>
@@ -43,7 +43,7 @@
     </tr>
     <tr>
       <td colspan="2">
-        <a href="javascript:history.back();">Вернуться к списку встреч</a>
+        <a href="javascript:history.back();"><%= t('go_back_to_meetings_link') %></a>
       </td>
     </tr>
   </table>

@@ -1,10 +1,10 @@
 <fieldset class="smallForm" style="margin-right: 15%; margin-left: 15%;">
-  <legend class="formLegend"><h4>Календарь врача</h4></legend>
+  <legend class="formLegend"><h4><%= t('doctors_calendar_legend') %></h4></legend>
   <table class="table table-striped">
-    <h3>Bрач :</h3>
+    <h3><%= t('doctor_label') %></h3>
     <tr>
       <td>
-        Имя :
+        <%= t('name_header') %>
       </td>
       <td>
         <%= @doctor.name %>
@@ -12,33 +12,33 @@
     </tr>
     <tr>
       <td>
-        email :
+        <%= t('email_header') %>
       </td>
       <td>
         <%= @doctor.email %>
       </td>
     </tr>
   </table>
-  <h3>Встречи :</h3>
+  <h3><%= t('meeting_label') %></h3>
   <% if @meetings.any? %>
 
       <table class="table table-hover">
         <thead>
         <tr>
           <th></th>
-          <th>Начало</th>
-          <th>Конец</th>
+          <th><%= t('start_header') %></th>
+          <th><%= t('end_header') %></th>
         </tr>
         </thead>
 
         <tbody>
         <% @meetings.each do |meeting| %>
             <tr>
-              <td><%= link_to 'Пациент', patients_info_path(meeting.patient_id) %></td>
+              <td><%= link_to t('patient_link'), patients_info_path(meeting.patient_id) %></td>
               <td><%= meeting.time_start%></td>
               <td><%= meeting.time_end %></td>
 
-              <td><%= link_to 'Установить время', edit_meeting_path(meeting) %></td>
+              <td><%= link_to t('set_time_link'), edit_meeting_path(meeting) %></td>
 
             </tr>
         <% end %>
@@ -46,16 +46,16 @@
 
         <tr>
           <td colspan="2">
-            <%= link_to 'Вернуться к списку врачей', doctors_path %>
+            <%= link_to t('go_back_to_doctors_link'), doctors_path %>
           </td>
         </tr>
       </table>
 
 
   <% else %>
-      У вас нет встреч
+      <%= t('no_meetings_message') %>
       <br />
-      <%= link_to 'Вернуться к списку врачей', doctors_path %>
+      <%= link_to t('go_back_to_doctors_link'), doctors_path %>
   <% end %>
 
 

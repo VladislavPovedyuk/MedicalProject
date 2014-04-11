@@ -14,7 +14,7 @@ class PatientsController < ApplicationController
     if @patient.save
       @meeting = Meeting.new(:doctor_id => @doctor.id, :patient_id => @patient.id)
       if @meeting.save
-        flash[:notice] = 'Запись прошла успешно. Доктор с вами свяжется. Всего доброго!'
+        flash[:notice] = t('meeting_creation_success')
         redirect_to new_patient_path
       else
         render action: 'new'

@@ -2,15 +2,15 @@
     <p id="notice" ><%= notice %></p>
 <% end %>
 
-<h2>Список докторов :</h2>
+<h2><%= t('doctors_list') %></h2>
 
 <% if @doctors.any? %>
 
     <table class="table table-hover">
       <thead>
       <tr>
-        <th>Имя </th>
-        <th>email </th>
+        <th><%= t('name_header') %></th>
+        <th><%= t('email_header') %> </th>
       </tr>
       </thead>
 
@@ -19,10 +19,10 @@
           <tr>
             <td><%= doctor.name %></td>
             <td><%= doctor.email %></td>
-            <td><%= link_to 'Посмотреть', doctor_path(doctor) %></td>
-            <td><%= link_to 'Календарь', doctors_calendar_path(doctor) %></td>
-            <td><%= link_to 'Редактировать', edit_doctor_path(doctor) %></td>
-            <td><%= link_to 'Удалить', doctor, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+            <td><%= link_to t('watch_link'), doctor_path(doctor) %></td>
+            <td><%= link_to t('calendar_link'), doctors_calendar_path(doctor) %></td>
+            <td><%= link_to t('edit_link'), edit_doctor_path(doctor) %></td>
+            <td><%= link_to t('delete_link'), doctor, method: :delete, data: { confirm: t('confirm_delete_message') } %></td>
           </tr>
       <% end %>
       </tbody>
@@ -30,10 +30,10 @@
 
 
 <% else %>
-    У нас нет добавленных докторов
+    <%= t('no_doctors_message') %>
 <% end %>
 
 
 <br>
 
-<%= link_to 'Добавить нового доктора', new_doctor_path %>
+<%= link_to t('submit_add_new_doctor'), new_doctor_path %>

@@ -1,0 +1,97 @@
+ru:
+  date:
+    month_names: [~, Января, Февраля, Марта, Aпреля, Mая, Июня, Июля, Aвгуста, Cентября, Oктября, Hоября, Декабря]
+
+    order:
+     - :day
+     - :month
+     - :year
+
+
+
+#  application layout
+  title_link: "Вход для врачей"
+  title_html: "Клиника им. <span>В.И. Грищенко</span>"
+  title_p: "Клиника репродуктивной медицины"
+  entered_like: "Вы вошли как :"
+  leave: 'Выйти'
+  menu: "Меню :"
+  main: "Главная"
+  make_appointment: "Запись на консультацию"
+  doctors_list: "Список врачей"
+
+#  patients/index.html.erb
+  welcome_html: "<h1>Добро пожаловать на наш сайт</h1>
+                <p>Здесь вы можете записаться на консультацию с доктором. Оставьте ваши данные и мы вам обязательно перезвоним.</p>"
+
+#  patients/new.html.erb
+  new_patient_legend: "Запись на консультацию"
+  name_label: "Имя :"
+  name_placeholder: "Введите ваше имя"
+  skype_label: "Skype :"
+  skype_placeholder: "Введите ваш скайп логин"
+  tel_label: "Телефон :"
+  tel_placeholder: "Введите ваш номер телефона"
+  age_label: "Возраст :"
+  age_placeholder: "Введите ваш возраст"
+  gender_label: 'Пол :'
+  doctor_label: 'Доктор :'
+  submit_new_appointment: 'Записаться'
+
+#  patients/show.html.erb
+  show_patient_legend: "Информация о пациенте"
+  go_back_to_meetings_link: "Вернуться к списку встреч"
+
+#  doctors/index.html.erb
+  doctors_list: "Список докторов :"
+  name_header: "Имя :"
+  email_header: "email :"
+  watch_link: 'Посмотреть'
+  calendar_link: 'Календарь'
+  edit_link: 'Редактировать'
+  delete_link: 'Удалить'
+  confirm_delete_message: 'Вы уверены?'
+  no_doctors_message: 'У нас нет добавленных докторов'
+  submit_add_new_doctor: 'Добавить нового доктора'
+
+#  doctors/show.html.erb
+  show_doctor_legend: "Информация о враче"
+  go_back_to_doctors_link: 'Вернуться к списку врачей'
+
+#  doctors/edit.html.erb
+  edit_doctor_legend: "Редактирование доктора"
+  submit_edit_doctor: 'Редактировать'
+
+#  doctors/new.html.erb
+  new_doctor_legend: "Добавление доктора"
+  submit_new_doctor: 'Добавить'
+  password_label: "Пароль :"
+  confirm_password_label: "Пароль еще раз :"
+
+#  doctors/calendar.html.erb
+  doctors_calendar_legend: "Календарь врача"
+  doctor_label: "Bрач :"
+  meeting_label: "Встречи :"
+  start_header: "Начало :"
+  end_header: "Конец: "
+  patient_link: 'Пациент'
+  set_time_link: 'Установить время'
+  no_meetings_message: 'У вас нет встреч'
+
+#  meetings/edit.html.erb
+  meeting_edit_legend: "Установка времени"
+  patient_label: 'Пациент :'
+  submit_calendar: 'Установить время'
+  go_back_to_calendar_link: 'Вернуться к календарю'
+
+#  controllers messages
+  new_doctor_added: "Добавлен новый доктор %{doctor}"
+  doctor_edited: "Успешное редактирование данных доктора %{doctor}"
+  doctor_edit_fail: 'Во время редактирования врача произошла ошибка'
+  doctor_deleted: "Доктор %{doctor} успешно удален"
+  doctor_delete_fail: "Ошибка удаления доктора %{doctor}"
+
+  time_set_success: "Время установлено успешно"
+  time_set_fail: 'Во время установки времени произошла ошибка'
+
+  meeting_creation_success: 'Запись прошла успешно. Доктор с вами свяжется. Всего доброго!'

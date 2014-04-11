@@ -3,7 +3,7 @@
 <% end %>
 
 <fieldset class="smallForm">
-  <legend class="formLegend"><h4>Запись на консультацию</h4></legend>
+  <legend class="formLegend"><h4><%= t('new_patient_legend') %></h4></legend>
 
   <% if @patient.errors.any? %>
       <div id="error_explanation" >
@@ -18,17 +18,17 @@
   <% end %>
 
     <%= simple_form_for @patient, :html => { :class => 'form-horizontal' } do |f| %>
-        <%= f.input :name, label: "Имя :", placeholder: "Введите ваше имя" %>
-        <%= f.input :skype, label: "Skype :", placeholder: "Введите ваш скайп логин"  %>
-        <%= f.input :tel, label: "Телефон :", placeholder: "Введите ваш номер телефона"  %>
-        <%= f.input :age, label: "Возраст :", placeholder: "Введите ваш возраст", collection: 18..50  %>
-        <%= f.input :gender, :collection => ["М", "Ж"], :as => :radio_buttons, :label => 'Пол :' %>
+        <%= f.input :name, label: t('name_label'), placeholder: t('name_placeholder') %>
+        <%= f.input :skype, label: t('skype_label'), placeholder: t('skype_placeholder')  %>
+        <%= f.input :tel, label: t('tel_label'), placeholder: t('tel_placeholder')  %>
+        <%= f.input :age, label: t('age_label'), placeholder: t('age_placeholder'), collection: 18..50  %>
+        <%= f.input :gender, :collection => ["М", "Ж"], :as => :radio_buttons, :label => t('gender_label') %>
         <%= simple_fields_for :doctors do |d|%>
-            <%= d.input :id, collection: @doctors_names_list, :label => 'Доктор :' %>
+            <%= d.input :id, collection: @doctors_names_list, :label => t('doctor_label') %>
         <% end %>
         <br />
         <center>
-          <%= f.button :submit, 'Записаться' %>
+          <%= f.button :submit, t('submit_new_appointment') %>
         </center>
     <% end %>
 
