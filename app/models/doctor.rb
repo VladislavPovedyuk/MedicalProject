@@ -8,11 +8,11 @@ class Doctor < ActiveRecord::Base
 
   validates :name, presence: true, length: { in: 2...15 }
   validates :email, format: { with: Devise.email_regexp,
-                              message: 'Bad E-mail '}
+                              message: :bad_email}
   validates :password, confirmation: true
   validates :password_confirmation,
             format: { with: /\A[a-zA-Z0-9_]*\z/,
-            message: 'Only allows letters, numbers. Minimum length for password - 8 characters '}
+            message: :bad_password}
 
   scope :sorted_descending,-> {order("created_at DESC")}
 

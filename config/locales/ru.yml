@@ -7,6 +7,49 @@ ru:
      - :month
      - :year
 
+  devise:
+    sessions:
+      doctor:
+        signed_in: ""
+        signed_out: ""
+
+  activerecord:
+    errors:
+      models:
+        patient:
+          attributes:
+            name:
+              blank: "Имя не может быть пустым"
+              too_short: "Имя слишком короткое минимум 2 символа"
+            skype:
+              blank: "Skype логин не может быть пустим"
+              too_short: "Skype логин слишком короткий минимум 2 символа"
+            tel:
+              blank: "Телефон не может быть пустым"
+              too_short: "Телефон слишком короткий минимум 5 цифр"
+              telephone_bad_format: "Телефон в формате + и цифры"
+            age:
+              not_a_number: "Возраст может быть только числом"
+              inclusion: "Диапазон возраста от 18 до 50"
+            gender:
+              not_valid_gender: "Допустимые значение для пола М и Ж"
+
+        doctor:
+          attributes:
+            name:
+              blank: "Имя не может быть пустым"
+              too_short: "Имя слишком короткое минимум 2 символа"
+            email:
+              blank: "Email не может быть пустым"
+              bad_email: "Формат email xxxx@xxxx.xx"
+              invalid: "Плохой формат email"
+            password:
+              blank: "Пароль не может быть пустым"
+              too_short: "Пароль слишком короткий минимум 8 символов"
+              bad_password: "Пароль только буквы и цифры, минимальная длинна 8 символов"
+            password_confirmation:
+              confirmation: "Пароли не совпадают"
+
 
 
 #  application layout
@@ -18,7 +61,7 @@ ru:
   menu: "Меню :"
   main: "Главная"
   make_appointment: "Запись на консультацию"
-  doctors_list: "Список врачей"
+  doctors_list_layout: "Список врачей"
 
 #  patients/index.html.erb
   welcome_html: "<h1>Добро пожаловать на наш сайт</h1>
