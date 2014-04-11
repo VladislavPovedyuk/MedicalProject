@@ -1,9 +1,9 @@
 <fieldset class="smallForm">
-  <legend class="formLegend"><h4>Информация о враче</h4></legend>
+  <legend class="formLegend"><h4><%= t('show_doctor_legend') %></h4></legend>
   <table class="table table-striped">
     <tr>
       <td>
-        Имя :
+        <%= t('name_header') %>
       </td>
       <td>
         <%= @doctor.name %>
@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <td>
-        email :
+        <%= t('email_header') %>
       </td>
       <td>
         <%= @doctor.email %>
@@ -19,7 +19,7 @@
     </tr>
     <tr>
       <td colspan="2">
-        <%= link_to 'Вернуться к списку врачей', doctors_path %>
+        <%= link_to t('go_back_to_doctors_link'), doctors_path %>
       </td>
     </tr>
   </table>

@@ -1,0 +1,22 @@
+<% if notice %>
+    <p id="notice" ><%= notice %></p>
+<% end %>
+
+<fieldset class="smallForm" style="margin-right: 15%; margin-left: 15%;">
+  <legend class="formLegend"><h4><%= t('meeting_edit_legend') %></h4></legend>
+
+  <%= simple_form_for @meeting, method: :patch, :html => { :class => 'form-vertical' } do |f| %>
+      <h5><%= t('doctor_label') %> <%= @doctor_name %></h5>
+      <h5><%= t('patient_label') %> <%= @patient_name %></h5>
+      <%= f.input :time_start, label: t('start_header'), :input_html => {:style => 'width: 100px'} %>
+      <%= f.input :time_end, label: t('end_header') , :input_html => {:style => 'width: 100px'} %>
+      <br />
+      <center>
+        <%= f.button :submit, t('submit_calendar') %> &nbsp&nbsp&nbsp <%= link_to t('go_back_to_calendar_link'), doctors_calendar_path(@meeting.doctor_id) %>
+      </center>
+
+  <% end %>
+
+
+
+</fieldset>

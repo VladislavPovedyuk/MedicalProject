@@ -19,9 +19,9 @@
               <div class="title-bottom-left">
                 <div class="title-top-right">
                   <div class="title-bottom-right">
-                    <h1><a href="/doctors/sign_in" title="Go to homepage">Клиника им. <span>В.И. Грищенко</span></a></h1>
+                    <h1><a href="/doctors/sign_in" title=<%= t('title_link') %>> <%= t('title_html') %></a></h1>
 
-                    <p>Клиника репродуктивной медицины</p>
+                    <p><%= t('title_p') %></p>
                   </div>
                 </div>
               </div>
@@ -40,22 +40,22 @@
     <div class="column-left">
       <%if doctor_signed_in?%>
           <div class="smallForm">
-            <p>Вы вошли как : <%= current_doctor.name %></p>
+            <p><%= t('entered_like') %> <%= current_doctor.name %></p>
             <br />
-            <%= button_to 'Выйти', destroy_doctor_session_path, method: :delete, :class=>"btn"  %>
+            <%= button_to t('leave'), destroy_doctor_session_path, method: :delete, :class=>"btn"  %>
           </div>
       <% end %>
 
 
-      <h3>Меню :</h3>
+      <h3><%= t('menu') %></h3>
       <a href="#skip-menu" class="hidden"></a>
       <ul class="menu">
 
         </li>
-        <li><a href="/"> Главная </a></li>
-        <li><a href="/patients/new"> Запись на консультацию </a></li>
+        <li><a href="/"> <%= t('main') %> </a></li>
+        <li><a href="/patients/new"> <%= t('make_appointment') %> </a></li>
         <%if doctor_signed_in?%>
-            <li><a href="/doctors"> Список врачей </a></li>
+            <li><a href="/doctors"> <%= t('doctors_list') %> </a></li>
         <% end %>
         <!--TODO:Disactivated because page is not ready yet-->
         <li><a href="/" onclick="return false" class="active"> О нас </a></li>

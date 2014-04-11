@@ -3,7 +3,7 @@
 <% end %>
 
 <fieldset class="smallForm">
-  <legend class="formLegend"><h4>Редактирование доктора</h4></legend>
+  <legend class="formLegend"><h4><%= t('edit_doctor_legend') %></h4></legend>
 
   <% if @doctor.errors.any? %>
       <div id="error_explanation" >
@@ -18,11 +18,11 @@
   <% end %>
 
   <%= simple_form_for @doctor , :html => { :class => 'form-horizontal' } do |f| %>
-      <%= f.input :name, label: "Имя :" %>
-      <%= f.input :email, label: "email :"  %>
+      <%= f.input :name, label: t('name_header') %>
+      <%= f.input :email, label: t('email_header')  %>
       <br />
       <center>
-        <%= f.button :submit, 'Редактировать' %> &nbsp&nbsp&nbsp <%= link_to 'Вернуться к списку врачей', doctors_path %>
+        <%= f.button :submit, t('submit_edit_doctor') %> &nbsp&nbsp&nbsp <%= link_to t('go_back_to_doctors_link'), doctors_path %>
       </center>
 
   <% end %>

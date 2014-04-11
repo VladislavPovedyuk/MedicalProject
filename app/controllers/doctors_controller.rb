@@ -13,7 +13,7 @@ class DoctorsController < ApplicationController
   def create
     @doctor = Doctor.new(doctor_params)
     if @doctor.save
-      flash[:notice] = "Добавлен новый доктор #{@doctor.name}"
+      flash[:notice] = t('new_doctor_added', doctor: "#{@doctor.name}")
       redirect_to doctors_path
     else
       render action: 'new'
@@ -25,10 +25,10 @@ class DoctorsController < ApplicationController
 
   def update
     if @doctor.update(doctor_params)
-      flash[:notice] = "Успешное редактирование данных доктора #{@doctor.name}"
+      flash[:notice] = t('doctor_edited', doctor: "#{@doctor.name}")
         redirect_to edit_doctor_path
     else
-      flash[:notice] = 'Во время редактирования врача произошла ошибка'
+      flash[:notice] = t('doctor_edit_fail')
         render action: 'edit'
     end
   end
@@ -42,9 +42,9 @@ class DoctorsController < ApplicationController
 
   def destroy
     if @doctor.destroy
-      flash[:notice] = "Доктор #{@doctor.name} успешно удален"
+      flash[:notice] = t('doctor_deleted', doctor: "#{@doctor.name}")
     else
-      flash[:notice] = "Ошибка удаления доктора #{@doctor.name}"
+      flash[:notice] = t('doctor_delete_fail', doctor: "#{@doctor.name}")
     end
     redirect_to doctors_path
   end
