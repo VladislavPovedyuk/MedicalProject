@@ -10,6 +10,14 @@ FactoryGirl.define do
     password_confirmation "11111111"
   end
 
+  factory :richards2, class: Doctor  do
+    id 7
+    name "Dr. Richards"
+    email "rich@mail.ru"
+    password "11111111"
+    password_confirmation "11111111"
+  end
+
   factory :doctor_login, class: Doctor  do
     name "Dr. Login"
     email "login@mail.ru"

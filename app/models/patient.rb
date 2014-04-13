@@ -3,6 +3,7 @@ class Patient < ActiveRecord::Base
 	has_many :doctors, :through => :meetings
 
   accepts_nested_attributes_for :doctors
+  accepts_nested_attributes_for :meetings, allow_destroy: true
 
   validates :name, presence: true, length: { in: 2...15 }
   validates :skype, presence: true, length: { in: 2...15 }
@@ -12,5 +13,7 @@ class Patient < ActiveRecord::Base
   validates :age, numericality: { only_integer: true }, :inclusion => 18..50
   validates :gender, inclusion: { in: %w(М Ж),
                                   message: :not_valid_gender }
+
+
 
 end

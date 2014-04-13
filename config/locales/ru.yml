@@ -50,6 +50,13 @@ ru:
             password_confirmation:
               confirmation: "Пароли не совпадают"
 
+        meeting:
+          attributes:
+            doctor:
+              blank: "Для консультации должен быть выбран доктор"
+            patient:
+              blank: "Для консультации должен быть создан пациент"
+
 
 
 #  application layout
@@ -80,6 +87,7 @@ ru:
   gender_label: 'Пол :'
   doctor_label: 'Доктор :'
   submit_new_appointment: 'Записаться'
+  doctor_blank: 'Для консультации должен быть выбран доктор'
 
 #  patients/show.html.erb
   show_patient_legend: "Информация о пациенте"

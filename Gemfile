@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'cancan'
 
 gem 'simple_form'
+gem 'nested_form'
 
 gem 'devise'
 

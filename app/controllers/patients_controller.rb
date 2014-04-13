@@ -9,9 +9,14 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = Patient.new(params[:patient].permit(:name, :skype, :tel, :age, :gender))
-    @doctor = Doctor.find(params[:doctors][:id])
-    if @patient.save
+
+    @patient = Patient.new(params[:patient].permit(:name, :skype, :tel, :age, :gender, :doctors_id))
+    @doctors_names_list = Doctor.all
+
+    if @patient.valid? && params[:doctors][:id] != ''
+      @patient.save
+      
+      @doctor = Doctor.find(params[:doctors][:id])
       @meeting = Meeting.new(:doctor_id => @doctor.id, :patient_id => @patient.id)
       if @meeting.save
         flash[:notice] = t('meeting_creation_success')
@@ -19,6 +24,9 @@ class PatientsController < ApplicationController
       else
         render action: 'new'
       end
+    elsif (@patient.valid? && params[:doctors][:id] == '')
+      flash[:alert] = t('doctor_blank')
+      render action: 'new'
     else
       render action: 'new'
     end
