@@ -1,4 +1,6 @@
 class PatientsController < ApplicationController
+  before_action :authenticate_doctor!, only: [:show]
+
   def index
   end
 
