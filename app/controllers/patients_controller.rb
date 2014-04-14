@@ -10,14 +10,13 @@ class PatientsController < ApplicationController
 
   def create
 
-    @patient = Patient.new(params[:patient].permit(:name, :skype, :tel, :age, :gender, :doctors_id))
+    @patient = Patient.new(patient_params)
     @doctors_names_list = Doctor.all
 
     if @patient.valid? && params[:doctors][:id] != ''
       @patient.save
-      
-      @doctor = Doctor.find(params[:doctors][:id])
-      @meeting = Meeting.new(:doctor_id => @doctor.id, :patient_id => @patient.id)
+
+      @meeting = Meeting.new(:doctor_id => params[:doctors][:id], :patient_id => @patient.id)
       if @meeting.save
         flash[:notice] = t('meeting_creation_success')
         redirect_to new_patient_path
@@ -35,4 +34,9 @@ class PatientsController < ApplicationController
   def show
     @patient = Patient.find(params[:id])
   end
+
+  private
+    def patient_params
+      params[:patient].permit(:name, :skype, :tel, :age, :gender, :doctors_id)
+    end
 end
