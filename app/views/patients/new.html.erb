@@ -17,6 +17,14 @@
       </div>
   <% end %>
 
+  <% if alert %>
+      <div id="error_explanation" >
+        <ul>
+            <li><p id="alert" ><%= alert %></p></li>
+        </ul>
+      </div>
+  <% end %>
+
     <%= simple_form_for @patient, :html => { :class => 'form-horizontal' } do |f| %>
         <%= f.input :name, label: t('name_label'), placeholder: t('name_placeholder') %>
         <%= f.input :skype, label: t('skype_label'), placeholder: t('skype_placeholder')  %>

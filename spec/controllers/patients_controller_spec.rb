@@ -21,12 +21,12 @@ describe PatientsController do
     context "with valid attributes" do
       it "creates new object" do
         expect{
-          post :create, patient: FactoryGirl.attributes_for(:vasia)
+          post :create, patient: FactoryGirl.attributes_for(:vasia) , doctors: FactoryGirl.attributes_for(:richards2)
         }.to change(Patient, :count).by(1)
       end
 
-      it "rendirects to new patient path" do
-        post :create, patient: FactoryGirl.attributes_for(:vasia)
+      it "redirects to new patient path" do
+        post :create, patient: FactoryGirl.attributes_for(:vasia) , doctors: FactoryGirl.attributes_for(:richards2)
         expect(response).to redirect_to new_patient_path
       end
     end
