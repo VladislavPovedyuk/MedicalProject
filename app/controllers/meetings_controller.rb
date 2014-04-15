@@ -11,7 +11,6 @@ class MeetingsController < ApplicationController
       flash[:notice] = t('time_set_success')
       redirect_to edit_meeting_path
     else
-      raise ActiveRecord::Rollback
       flash[:notice] = t('time_set_fail')
       flash[:notice] = t('bad_time_start_and_end') if !check_time?
       render action: 'edit'
