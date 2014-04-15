@@ -41,10 +41,14 @@ class DoctorsController < ApplicationController
   end
 
   def destroy
-    if @doctor.destroy
-      flash[:notice] = t('doctor_deleted', doctor: "#{@doctor.name}")
+    if check_if_doctor_is_last?
+      if @doctor.destroy
+        flash[:notice] = t('doctor_deleted', doctor: "#{@doctor.name}")
+      else
+        flash[:notice] = t('doctor_delete_fail', doctor: "#{@doctor.name}")
+      end
     else
-      flash[:notice] = t('doctor_delete_fail', doctor: "#{@doctor.name}")
+      flash[:notice] = t('last_doctor', doctor: "#{@doctor.name}")
     end
     redirect_to doctors_path
   end
@@ -56,5 +60,9 @@ class DoctorsController < ApplicationController
 
     def doctor_find_by_id
       @doctor = Doctor.find(params[:id])
+    end
+
+    def check_if_doctor_is_last?
+      Doctor.count > 1
     end
 end

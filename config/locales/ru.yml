@@ -59,8 +59,7 @@ ru:
 
 # meeting validation
   no_such_doctor_id: 'Нельзя подменять id врача на форме!'
-  bad_time_start_and_end: '  bad_time_start_and_end: ''Встреча не может заканчиваться раньше чем началась
-'
+  bad_time_start_and_end: 'Встреча не может заканчиваться раньше чем началась'
 
 #  application layout
   title_link: "Вход для врачей"
@@ -144,6 +143,7 @@ ru:
   doctor_edit_fail: 'Во время редактирования врача произошла ошибка'
   doctor_deleted: "Доктор %{doctor} успешно удален"
   doctor_delete_fail: "Ошибка удаления доктора %{doctor}"
+  last_doctor: 'Доктор %{doctor} - последний в системе, добавьте ещё одного доктора или смиритесь со своей участью'
 
   time_set_success: "Время установлено успешно"
   time_set_fail: 'Во время установки времени произошла ошибка'
