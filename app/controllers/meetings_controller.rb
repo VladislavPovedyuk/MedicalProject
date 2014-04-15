@@ -7,11 +7,16 @@ class MeetingsController < ApplicationController
   end
 
   def update
-    if @meeting.update(meeting_params)
-      flash[:notice] = t('time_set_success')
-      redirect_to edit_meeting_path
+    unless check_time?
+      if @meeting.update(meeting_params)
+        flash[:notice] = t('time_set_success')
+        redirect_to edit_meeting_path
+      else
+        flash[:notice] = t('time_set_fail')
+        render action: 'edit'
+      end
     else
-      flash[:notice] = t('time_set_fail')
+      flash[:notice] = "TIME FAIL"
       render action: 'edit'
     end
   end
@@ -23,5 +28,9 @@ class MeetingsController < ApplicationController
 
     def meeting_find_by_id
       @meeting = Meeting.find(params[:id])
+    end
+
+    def check_time?
+      @result = @meeting.time_start > @meeting.time_end
     end
 end

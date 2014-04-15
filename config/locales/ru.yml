@@ -59,6 +59,8 @@ ru:
 
 # meeting validation
   no_such_doctor_id: 'Нельзя подменять id врача на форме!'
+  bad_time_start_and_end: '  bad_time_start_and_end: ''Встреча не может заканчиваться раньше чем началась
+'
 
 #  application layout
   title_link: "Вход для врачей"
