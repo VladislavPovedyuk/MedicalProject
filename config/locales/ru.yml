@@ -57,7 +57,8 @@ ru:
             patient:
               blank: "Для консультации должен быть создан пациент"
 
-
+# meeting validation
+  no_such_doctor_id: 'Нельзя подменять id врача на форме!'
 
 #  application layout
   title_link: "Вход для врачей"
