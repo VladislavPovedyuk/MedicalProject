@@ -7,16 +7,13 @@ class MeetingsController < ApplicationController
   end
 
   def update
-    unless check_time?
-      if @meeting.update(meeting_params)
-        flash[:notice] = t('time_set_success')
-        redirect_to edit_meeting_path
-      else
-        flash[:notice] = t('time_set_fail')
-        render action: 'edit'
-      end
+    if @meeting.update(meeting_params) && check_time?
+      flash[:notice] = t('time_set_success')
+      redirect_to edit_meeting_path
     else
-      flash[:notice] = t('bad_time_start_and_end')
+      raise ActiveRecord::Rollback
+      flash[:notice] = t('time_set_fail')
+      flash[:notice] = t('bad_time_start_and_end') if !check_time?
       render action: 'edit'
     end
   end
@@ -31,6 +28,6 @@ class MeetingsController < ApplicationController
     end
 
     def check_time?
-      @result = @meeting.time_start > @meeting.time_end
+      @meeting.time_start < @meeting.time_end
     end
 end
