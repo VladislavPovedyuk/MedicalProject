@@ -16,7 +16,7 @@ class MeetingsController < ApplicationController
         render action: 'edit'
       end
     else
-      flash[:notice] = "TIME FAIL"
+      flash[:notice] = t('bad_time_start_and_end')
       render action: 'edit'
     end
   end
