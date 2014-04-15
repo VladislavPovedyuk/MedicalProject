@@ -16,6 +16,11 @@ class PatientsController < ApplicationController
     @doctors_names_list = Doctor.all
 
     if @patient.valid? && params[:doctors][:id] != ''
+      unless check_doctor_id?
+        flash[:alert] = t('no_such_doctor_id')
+        render action: 'new' and return
+      end
+
       @patient.save
 
       @meeting = Meeting.new(:doctor_id => params[:doctors][:id], :patient_id => @patient.id)
@@ -40,5 +45,9 @@ class PatientsController < ApplicationController
   private
     def patient_params
       params[:patient].permit(:name, :skype, :tel, :age, :gender, :doctors_id)
+    end
+
+    def check_doctor_id?
+      Doctor.select(:id).include?(params[:doctors][:id])
     end
 end
