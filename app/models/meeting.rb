@@ -9,8 +9,8 @@ class Meeting < ActiveRecord::Base
   validate :time_end_cannot_be_higher_time_start
 
   def time_end_cannot_be_higher_time_start
-    if time_end.present? && time_start.present? && time_end < time_start
-      errors.add(:time_start, 'Время начала консультации не может быть больше времени окончания')
+    if time_end.present? && time_start.present? && time_end <= time_start
+      errors.add(:time_end, 'Время конца консультации должно быть больше времени начала')
     end
   end
 
