@@ -53,7 +53,7 @@ ru:
         meeting:
           attributes:
             doctor:
-              blank: "Для консультации должен быть выбран доктор"
+              blank: "Для консультации должен быть выбран врач"
             patient:
               blank: "Для консультации должен быть создан пациент"
 
@@ -88,7 +88,7 @@ ru:
   gender_label: 'Пол :'
   doctor_label: 'Доктор :'
   submit_new_appointment: 'Записаться'
-  doctor_blank: 'Для консультации должен быть выбран доктор'
+  doctor_blank: 'Для консультации должен быть выбран врач'
 
 #  patients/show.html.erb
   show_patient_legend: "Информация о пациенте"
@@ -135,6 +135,7 @@ ru:
   patient_label: 'Пациент :'
   submit_calendar: 'Установить время'
   go_back_to_calendar_link: 'Вернуться к календарю'
+  time_start_higher_time_end: 'Время начала консультации не может быть больше времени окончания'
 
 #  controllers messages
   new_doctor_added: "Добавлен новый доктор %{doctor}"
