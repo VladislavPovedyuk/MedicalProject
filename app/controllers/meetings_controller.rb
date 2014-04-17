@@ -7,7 +7,13 @@ class MeetingsController < ApplicationController
   end
 
   def update
+<<<<<<< HEAD
+
+
+    if  @meeting.update(meeting_params)
+=======
     if @meeting.update(meeting_params) && check_time?
+>>>>>>> master
       flash[:notice] = t('time_set_success')
       redirect_to edit_meeting_path
     else
