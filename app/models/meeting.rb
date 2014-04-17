@@ -10,7 +10,7 @@ class Meeting < ActiveRecord::Base
 
   def time_end_cannot_be_higher_time_start
     if time_end.present? && time_start.present? && time_end <= time_start
-      errors.add(:time_end, 'Время конца консультации должно быть больше времени начала')
+      errors.add(:time_end, :bad_time_start_and_end)
     end
   end
 
