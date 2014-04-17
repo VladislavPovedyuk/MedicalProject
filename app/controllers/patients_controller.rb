@@ -16,7 +16,7 @@ class PatientsController < ApplicationController
     @doctors_names_list = Doctor.all
 
     if @patient.valid? && params[:doctors][:id] != ''
-      unless check_doctor_id?
+      if !check_doctor_id?
         flash[:alert] = t('no_such_doctor_id')
         render action: 'new' and return
       end
@@ -48,6 +48,6 @@ class PatientsController < ApplicationController
     end
 
     def check_doctor_id?
-      Doctor.select(:id).include?(params[:doctors][:id])
+      Doctor.pluck(:id).include?(params[:doctors][:id].to_i)
     end
 end
